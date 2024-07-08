@@ -2,17 +2,18 @@ body {
     display: flex;
     margin: 0;
     font-family: Arial, sans-serif;
+    flex-direction: column, f; /* Por defecto, el diseño será en columna para dispositivos móviles */
 }
 
 .sidebar {
-    width: 200px;
+    width: 100%;
     background-color: #f8f9fa;
     padding: 20px;
     box-shadow: 2px 0 5px rgba(0,0,0,0.1);
-    position: fixed;
+    position: relative;
     top: 0;
-    bottom: 0;
-    height: 100%;
+    bottom: auto;
+    height: auto;
     overflow-y: auto;
 }
 
@@ -35,7 +36,7 @@ body {
 }
 
 .content {
-    margin-left: 220px;
+    margin: 0;
     padding: 20px;
     flex-grow: 1;
 }
@@ -102,4 +103,27 @@ body {
 
 .add-to-cart:hover {
     background-color: #0056b3;
+}
+
+/* Media Queries para pantallas más grandes (PC) */
+@media (min-width: 768px) {
+    body {
+        flex-direction: row; /* Cambia a diseño en fila para pantallas grandes */
+    }
+    .sidebar {
+        width: 200px;
+        position: fixed;
+        top: 0;
+        bottom: 0;
+        height: 100%;
+    }
+    .content {
+        margin-left: 220px;
+    }
+    .product-list {
+        justify-content: flex-start; /* Alinea los elementos al inicio */
+    }
+    .product-card {
+        width: calc(25% - 40px); /* Ajusta el ancho para tener 4 columnas */
+    }
 }
