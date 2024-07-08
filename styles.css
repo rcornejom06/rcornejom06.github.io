@@ -64,9 +64,9 @@ body {
 }
 
 .product-card img {
-    max-width: 100%;
+    max-width: 90%;
     height: auto;
-    max-height: 120px;
+    max-height: 100px;
 }
 
 .product-info {
